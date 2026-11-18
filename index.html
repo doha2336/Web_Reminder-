@@ -1,0 +1,210 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+<meta name="theme-color" content="#fff3f2" />
+<meta name="description" content="حكايتنا الصغيرة… رسالة من قلبي لقلبك 🤍" />
+<title>حكايتنا الصغيرة 🤍 | Just for You</title>
+<link rel="icon" href="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA2NCA2NCI+PHJlY3Qgd2lkdGg9IjY0IiBoZWlnaHQ9IjY0IiByeD0iMTciIGZpbGw9IiNmOWQ5ZTQiLz48cGF0aCBkPSJNMzIgNTBTMTAgMzYgMTAgMjNhMTIgMTIgMCAwIDEgMjItNiAxMiAxMiAwIDAgMSAyMiA2QzU0IDM2IDMyIDUwIDMyIDUwWiIgZmlsbD0iI2JjNjQ4YSIvPjwvc3ZnPgo=" type="image/svg+xml" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Tajawal:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+<style>
+:root{--ink:#634755;--muted:#987f89;--rose:#e99aaf;--deep:#b96483;--cream:#fffaf5;--shadow:0 24px 75px #a5628830}
+*{box-sizing:border-box}html,body{margin:0;min-height:100%;background:#fff3f2;color:var(--ink)}body{font-family:'Tajawal',system-ui,sans-serif;overflow:hidden;-webkit-tap-highlight-color:transparent}button{font:inherit;cursor:pointer}button:focus-visible{outline:3px solid #af618d;outline-offset:4px}button:disabled{opacity:.55;cursor:default}
+.app{height:100svh;min-height:620px;position:relative;overflow:hidden;isolation:isolate;background:radial-gradient(ellipse at 25% 17%,#fffef6 0,transparent 36%),linear-gradient(145deg,#ffedf0,#fff7ee 49%,#f1e9ff);transition:background 1s ease}
+.app[data-scene="1"]{background:radial-gradient(ellipse at 80% 20%,#fff9eb,transparent 45%),linear-gradient(145deg,#faeaf1,#f7ecfb 65%,#fff6eb)}.app[data-scene="3"]{background:radial-gradient(ellipse at 65% 15%,#fff7dc,transparent 37%),linear-gradient(145deg,#f4e6f5,#ffefed 65%,#f9e8ee)}.app[data-scene="3"]{background:radial-gradient(ellipse at 25% 30%,#fff3d8,transparent 38%),linear-gradient(145deg,#fff0eb,#f5e9f8 72%,#fff8e5)}.app[data-scene="4"]{background:radial-gradient(ellipse at 50% 18%,#fffbe5,transparent 43%),linear-gradient(155deg,#ffe8ec,#f3e5ff 55%,#ffe9db)}
+.ambient{position:absolute;inset:0;pointer-events:none;overflow:hidden}.orb{position:absolute;filter:blur(6px);border-radius:50%;opacity:.55;animation:drift 12s ease-in-out infinite alternate}.orb.one{width:44vmax;height:44vmax;background:#ffcad957;top:-30%;right:-16%}.orb.two{width:30vmax;height:30vmax;background:#bd9be544;bottom:-24%;left:-8%;animation-delay:-5s}.orb.three{width:17vmax;height:17vmax;background:#ffe7a4a1;top:28%;left:7%;animation-delay:-8s}
+.specks{position:absolute;inset:0;overflow:hidden;pointer-events:none}.speck{position:absolute;opacity:.58;animation:floatUp var(--duration,9s) ease-in-out infinite;animation-delay:var(--delay,0s);font-size:var(--size,14px);left:var(--x);top:var(--y);filter:drop-shadow(0 2px 4px #e29bac44)}
+.topbar{position:absolute;z-index:12;top:max(19px,env(safe-area-inset-top));left:clamp(18px,4vw,64px);right:clamp(18px,4vw,64px);display:flex;align-items:center;justify-content:space-between;gap:20px}.brand{display:flex;align-items:center;gap:10px;color:#a97589;font-family:'DM Sans',sans-serif;font-size:14px;font-weight:700;letter-spacing:.03em}.brand .heart{font-size:22px;animation:beat 2.2s ease-in-out infinite}.utility{display:flex;gap:9px}.circle-btn{border:1px solid #ffffffb5;border-radius:50%;width:40px;height:40px;display:grid;place-items:center;background:#ffffff96;color:#986a82;backdrop-filter:blur(13px);box-shadow:0 5px 20px #a97b9724;transition:transform .2s,background .2s}.circle-btn:hover{transform:translateY(-3px);background:white}.scene-number{position:absolute;z-index:9;top:77px;left:0;right:0;text-align:center;color:#b48294;font-size:11px;letter-spacing:.25em;font-family:'DM Sans',sans-serif;font-weight:700}.progress{display:flex;gap:7px;justify-content:center;margin-top:12px;direction:ltr}.progress span{width:20px;height:4px;border-radius:8px;background:#d8b9c8;transition:width .45s,background .45s}.progress span.active{background:#b9658c;width:42px}
+.scene-container{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:flex-end;padding:110px 20px max(26px,env(safe-area-inset-bottom));}.scene-enter{animation:enterScene .8s cubic-bezier(.16,1,.3,1) both}.scene-exit{animation:exitScene .43s ease both}
+.scene-title{text-align:center;position:relative;z-index:5;flex:0 0 auto;margin-bottom:0;font-family:'DM Sans','Tajawal',sans-serif;font-size:clamp(24px,3.3vw,44px);line-height:1.15;font-weight:700;letter-spacing:-.055em;color:#76515f;pointer-events:none}.scene-title .kicker{display:block;text-transform:uppercase;letter-spacing:.24em;font-size:10px;color:#bc8497;margin-bottom:9px;font-weight:700}.scene-title i{font-style:normal;color:#dc8ea7}
+.stage{position:relative;width:min(860px,96vw);height:clamp(240px,47vh,490px);flex:1 1 auto;min-height:235px;max-height:520px;z-index:3;margin:3px auto 0;overflow:visible;perspective:1000px;transform-style:preserve-3d}.stage:after{content:"";position:absolute;z-index:-2;width:75%;height:24px;bottom:1%;left:12.5%;border-radius:50%;background:#89657922;filter:blur(17px)}.halo{position:absolute;width:min(520px,78vw);aspect-ratio:1;left:50%;top:43%;transform:translate(-50%,-50%);border-radius:50%;background:radial-gradient(circle,#fffdfcba 0,#fff7e88a 38%,#fff6e100 70%);box-shadow:0 0 105px #ffe3d75c;z-index:-1}
+.window{position:absolute;width:140px;height:175px;border:10px solid #fffaf8;box-shadow:0 10px 35px #bd8e9d24;top:10%;right:9%;background:linear-gradient(145deg,#f4d7f2,#fff8e1);border-radius:80px 80px 14px 14px;opacity:0;transition:opacity .5s}.window:before,.window:after{content:"";position:absolute;background:#fffaf8}.window:before{width:8px;height:100%;left:50%}.window:after{height:8px;width:100%;top:50%;left:0}.app[data-scene="1"] .window{opacity:1}
+.couch{position:absolute;left:13%;right:13%;bottom:3%;height:30%;border:12px solid #fff9f5;box-shadow:0 15px 40px #946b822b;border-radius:40px 40px 23px 23px;background:linear-gradient(140deg,#f4cbd6,#e5b3c9);opacity:0;transform:translateY(20px);transition:.65s}.couch:before{content:"";position:absolute;left:10%;right:10%;top:-54%;height:78%;background:#fbe0e5;border:8px solid #fff9f5;border-radius:45px}.app[data-scene="3"] .couch,.app[data-scene="3"] .couch{opacity:.9;transform:translateY(0)}
+.plant{position:absolute;bottom:8%;left:4%;font-size:clamp(36px,6vw,72px);opacity:.4;filter:blur(.2px);z-index:0}.tiny-star{position:absolute;font-size:23px;animation:twinkle 2.7s ease-in-out infinite;pointer-events:none}.tiny-star.a{top:18%;left:21%}.tiny-star.b{top:25%;right:18%;animation-delay:1s}.tiny-star.c{top:51%;right:9%;animation-delay:1.7s}
+.character{position:absolute;bottom:1%;height:91%;width:auto;transform-origin:50% 95%;will-change:transform,filter;filter:drop-shadow(0 19px 12px #835e7440);transition:left .8s cubic-bezier(.2,.8,.2,1),right .8s cubic-bezier(.2,.8,.2,1),height .65s,opacity .45s,filter .45s;animation:breathe 3.4s ease-in-out infinite}.character img{display:block;height:100%;width:auto;pointer-events:none;user-select:none}.girl{left:19%;z-index:3;animation-name:breatheGirl}.boy{right:18%;z-index:2;animation-name:breatheBoy;animation-delay:-1.7s}.character:after{content:"";position:absolute;inset:7% 12% auto 12%;height:22%;border-radius:50%;pointer-events:none;opacity:0;animation:blinkShadow 5.1s infinite}
+.app[data-scene="1"] .girl{left:39%;height:94%;animation:thinkGirl 4.2s ease-in-out infinite}.app[data-scene="1"] .boy{opacity:0;pointer-events:none;right:-20%}
+.app[data-scene="3"] .girl{left:13%;height:82%;animation:shyGirl 4s ease-in-out infinite}.app[data-scene="3"] .boy{right:10%;height:82%;animation:shyBoy 4s ease-in-out infinite}.app[data-scene="3"] .girl{left:23%;animation:annoyedGirl 4.5s ease-in-out infinite}.app[data-scene="3"] .boy{right:21%;animation:teaseBoy 4.5s ease-in-out infinite}
+.app[data-scene="4"] .girl{left:31%;height:94%;animation:hugGirl 3.6s ease-in-out infinite}.app[data-scene="4"] .boy{right:30%;height:94%;animation:hugBoy 3.6s ease-in-out infinite}.app[data-scene="4"] .character{filter:drop-shadow(0 18px 13px #805b7340)}
+.app[data-scene="4"].celebrate .girl,.app[data-scene="4"].celebrate .boy{animation-duration:1.7s}.app[data-scene="4"].longhug .girl{left:34%;animation:hugGirl 5.7s ease-in-out infinite}.app[data-scene="4"].longhug .boy{right:33%;animation:hugBoy 5.7s ease-in-out infinite}
+.heart-burst{position:absolute;left:50%;bottom:33%;z-index:9;font-size:20px;pointer-events:none;animation:popHeart 1.8s ease-out forwards;--dx:0px;--dy:-100px}.glow-heart{position:absolute;z-index:7;left:50%;top:18%;font-size:clamp(31px,5vw,57px);opacity:0;transform:translateX(-50%) scale(.5);filter:drop-shadow(0 5px 20px #fa86ac75)}.app[data-scene="4"] .glow-heart{animation:heartReveal 3.2s ease-in-out infinite}.app[data-scene="3"] .glow-heart{animation:heartReveal 4s ease-in-out infinite;animation-delay:1.4s}
+.story-card{position:relative;z-index:8;width:min(680px,92vw);max-height:40vh;padding:clamp(18px,2.8vh,26px) clamp(18px,3vw,36px) 21px;background:#fffdfbe8;backdrop-filter:blur(23px);border:1px solid #fff;box-shadow:var(--shadow);border-radius:27px;text-align:center;flex-shrink:0}.story-card:before{content:"";position:absolute;top:-7px;right:calc(50% - 7px);width:14px;height:14px;background:#fffdfb;transform:rotate(45deg);border-left:1px solid white;border-top:1px solid white}.eyebrow{color:#ca8fa5;letter-spacing:.18em;font-size:11px;font-family:'DM Sans',sans-serif;font-weight:700;text-transform:uppercase;margin:0 0 7px}.message{font-size:clamp(19px,2.55vw,27px);line-height:1.7;font-weight:700;margin:5px auto;color:#654653;min-height:1.5em;max-width:580px}.message.en{font-family:'DM Sans',sans-serif;direction:ltr;line-height:1.45;letter-spacing:-.04em;font-size:clamp(24px,3.8vw,40px)}.subtext{font-family:'DM Sans',sans-serif;direction:ltr;font-size:clamp(14px,1.8vw,18px);color:#ac7b8d;margin:7px auto 0}.caret{display:inline-block;width:2px;height:.9em;margin-right:3px;vertical-align:middle;background:#d88fa6;animation:caret .8s steps(1) infinite}.actions{display:flex;gap:10px;justify-content:center;flex-wrap:wrap;margin-top:15px}.primary,.secondary{border:0;padding:12px 28px;border-radius:999px;min-height:45px;font-size:clamp(15px,1.8vw,19px);font-weight:800;transition:transform .2s,box-shadow .2s}.primary{background:linear-gradient(135deg,#dd8da7,#b9698b);color:white;box-shadow:0 9px 21px #b9658945}.secondary{background:#fff3f6;color:#af6682;border:1px solid #f5d9e3}.primary:hover,.secondary:hover{transform:translateY(-3px);box-shadow:0 12px 22px #b9658940}.footer-note{position:absolute;z-index:5;bottom:6px;left:0;right:0;text-align:center;color:#aa8796;opacity:.72;font-size:11px;font-family:'DM Sans',sans-serif;letter-spacing:.05em}.back{position:absolute;z-index:11;top:50%;right:clamp(12px,3vw,55px);width:40px;height:40px;border:1px solid #fff9;border-radius:50%;background:#fff9;color:#b17d93;font-size:23px;box-shadow:0 8px 30px #ad829a1c}.back:disabled{opacity:.2}.scene-two .story-card{border-color:#fff}
+.end-reaction{position:absolute;z-index:15;left:50%;top:24%;transform:translateX(-50%);border-radius:24px;padding:13px 20px;text-align:center;background:#fffdf8eb;box-shadow:0 14px 38px #bd78934d;font-size:clamp(19px,2vw,25px);font-weight:800;white-space:nowrap;animation:reaction 3.7s ease both;pointer-events:none}
+@keyframes enterScene{from{opacity:0;transform:translateY(25px) scale(.98)}to{opacity:1;transform:translateY(0) scale(1)}}@keyframes exitScene{to{opacity:0;transform:translateY(-15px) scale(1.02)}}@keyframes drift{to{transform:translate(8%,8%)}}@keyframes beat{50%{transform:scale(1.21)}}@keyframes floatUp{0%,100%{transform:translateY(5px) rotate(-8deg);opacity:.26}50%{transform:translateY(-24px) rotate(12deg);opacity:.8}}@keyframes twinkle{50%{transform:scale(1.4) rotate(20deg);opacity:.3}}@keyframes breatheGirl{0%,100%{transform:translateY(0) rotate(0)}50%{transform:translateY(-7px) rotate(-1deg)}}@keyframes breatheBoy{0%,100%{transform:translateY(-3px) rotate(0)}50%{transform:translateY(5px) rotate(1deg)}}@keyframes thinkGirl{0%,25%,100%{transform:translateY(1px) rotate(-1deg)}42%{transform:translateY(8px) rotate(-4deg)}70%{transform:translateY(-6px) rotate(3deg)}}@keyframes shyGirl{0%,22%,100%{transform:translateX(-5%) rotate(-3deg)}55%,72%{transform:translateX(9%) rotate(2deg)}}@keyframes shyBoy{0%,22%,100%{transform:translateX(5%) rotate(3deg)}55%,72%{transform:translateX(-9%) rotate(-2deg)}}@keyframes annoyedGirl{0%,27%,100%{transform:translateX(-5%) rotate(-6deg)}46%{transform:translateX(5%) rotate(2deg)}70%{transform:translateY(-12px) rotate(7deg)}}@keyframes teaseBoy{0%,25%,100%{transform:translateY(0) rotate(2deg)}48%{transform:translateX(-9%) rotate(-5deg)}75%{transform:translateY(-10px) rotate(2deg)}}@keyframes hugGirl{0%,100%{transform:translateX(2%) rotate(5deg)}40%,72%{transform:translateX(16%) rotate(10deg)}}@keyframes hugBoy{0%,100%{transform:translateX(-2%) rotate(-4deg)}40%,72%{transform:translateX(-16%) rotate(-10deg)}}@keyframes popHeart{0%{opacity:0;transform:translate(0,20px) scale(.4)}18%{opacity:1}100%{opacity:0;transform:translate(var(--dx),var(--dy)) scale(1.5) rotate(35deg)}}@keyframes heartReveal{0%,15%,100%{opacity:0;transform:translateX(-50%) scale(.55)}40%,75%{opacity:.9;transform:translateX(-50%) scale(1.1)}}@keyframes caret{50%{opacity:0}}@keyframes reaction{0%{opacity:0;transform:translate(-50%,22px) scale(.7)}12%,80%{opacity:1;transform:translate(-50%,0) scale(1)}100%{opacity:0;transform:translate(-50%,-12px)}}
+
+.final-couple{position:absolute;left:50%;bottom:1%;transform:translateX(-50%);height:92%;opacity:0;pointer-events:none;filter:drop-shadow(0 18px 16px #805b7340);transition:opacity .55s ease, transform .8s ease}
+.final-couple img{display:block;height:100%;width:auto;user-select:none;pointer-events:none}
+.app[data-scene="3"] .final-couple{opacity:1;transform:translateX(-50%) translateY(0)}
+.app[data-scene="3"] #girl,.app[data-scene="3"] #boy{opacity:0;pointer-events:none}
+.app[data-scene="3"] #thoughtCloud{opacity:0;transform:translate(-50%,12px) scale(.96)}
+@media(max-width:650px){.app{min-height:0}.topbar{top:12px;left:14px;right:14px}.brand{font-size:12px}.circle-btn{width:36px;height:36px}.scene-number{top:63px}.scene-container{padding:109px 11px max(25px,env(safe-area-inset-bottom))}.scene-title{font-size:clamp(22px,6.2vw,29px);margin-bottom:4px}.scene-title .kicker{font-size:9px}.stage{width:100vw;min-height:210px;max-height:53vh}.character{height:85%}.girl{left:5%}.boy{right:5%}.app[data-scene="1"] .girl{left:30%;height:89%}.app[data-scene="3"] .girl{left:0%;height:79%}.app[data-scene="3"] .boy{right:-1%;height:79%}.app[data-scene="3"] .girl{left:8%;height:85%}.app[data-scene="3"] .boy{right:7%;height:85%}.app[data-scene="4"] .girl{left:17%;height:90%}.app[data-scene="4"] .boy{right:17%;height:90%}.app[data-scene="4"].longhug .girl{left:19%}.app[data-scene="4"].longhug .boy{right:19%}.story-card{width:calc(100vw - 24px);padding:17px 17px 15px;border-radius:23px;max-height:45vh}.message{font-size:clamp(17px,4.1vw,21px);line-height:1.55}.message.en{font-size:clamp(23px,6vw,30px)}.subtext{font-size:13px}.primary,.secondary{padding:11px 20px;font-size:15px}.back{top:44%;right:9px;width:32px;height:32px;font-size:19px}.plant{display:none}.window{right:3%;width:85px;height:111px}.footer-note{font-size:9px}.eyebrow{font-size:9px}}
+@media(max-height:710px){.scene-container{padding-top:90px}.stage{min-height:165px}.story-card{padding-top:13px;padding-bottom:12px}.message{line-height:1.42}.actions{margin-top:9px}.scene-number{top:53px}.scene-title{font-size:25px}.scene-title .kicker{margin-bottom:4px}}@media(max-height:540px){body{overflow:auto}.app{height:auto;min-height:610px}.scene-container{min-height:610px}.stage{min-height:230px}}
+@media(prefers-reduced-motion:reduce){*,*:before,*:after{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important}.scene-enter,.scene-exit{animation:none}}
+
+/* Revised story: preserve the first pastel cinematic layout and existing characters. */
+.app[data-scene="0"] .girl{left:9%;height:91%;animation:upsetGirl 4.8s ease-in-out infinite}
+.app[data-scene="0"] .boy{right:9%;height:91%;animation:upsetBoy 4.6s ease-in-out infinite}
+.character .happy,.character .upset{position:absolute;inset:0;height:100%;width:auto;transition:opacity .65s ease, transform .7s ease}
+.character .happy{position:relative;opacity:1}.character .upset{opacity:0}
+.app[data-scene="0"] .character .upset{opacity:1}
+.app[data-scene="0"] .character .happy{opacity:0}
+.app[data-scene="1"] .girl{left:8%;height:80%;animation:thinkGirl 4.2s ease-in-out infinite}
+.app[data-scene="1"] .boy{right:9%;height:80%;opacity:1;animation:shyBoy 4.2s ease-in-out infinite}
+.app[data-scene="1"] .window{opacity:.35}
+.app[data-scene="3"] .couch{opacity:0}
+.app[data-scene="3"] .girl{left:32%;height:91%;animation:hugGirl 3.4s ease-in-out infinite}
+.app[data-scene="3"] .boy{right:32%;height:91%;animation:hugBoy 3.4s ease-in-out infinite}
+.app[data-scene="3"] .glow-heart{animation:heartReveal 3s ease-in-out infinite}
+.app[data-scene="3"] .character{filter:drop-shadow(0 19px 13px #a36c8840)}
+@keyframes upsetGirl{0%,100%{transform:translateY(0) rotate(-2deg)}50%{transform:translateY(-5px) rotate(-3deg)}}
+@keyframes upsetBoy{0%,100%{transform:translateY(0) rotate(2deg)}50%{transform:translateY(-4px) rotate(3deg)}}
+.thought-cloud{position:absolute;top:-2%;left:50%;width:min(610px,88vw);transform:translate(-50%,18px) scale(.92);z-index:10;opacity:0;pointer-events:none;transition:opacity .5s ease,transform .65s cubic-bezier(.2,.8,.2,1);border-radius:48% 46% 42% 43% / 40% 38% 48% 45%;background:#fffdfcf5;box-shadow:0 20px 60px #b9799c44, inset 0 0 0 2px #ffffff;min-height:175px;padding:32px 45px;display:flex;align-items:center;justify-content:center}
+.thought-cloud:before,.thought-cloud:after{content:"";position:absolute;background:#fffdfcf5;border-radius:50%;box-shadow:0 3px 8px #d9b3c540}
+.thought-cloud:before{width:23px;height:23px;left:21%;bottom:-18px}
+.thought-cloud:after{width:12px;height:12px;left:17%;bottom:-36px}
+.app[data-scene="1"] .thought-cloud{opacity:1;transform:translate(-50%,0) scale(1)}
+.thought-text{text-align:center;white-space:pre-line;font-size:clamp(19px,2.5vw,27px);font-weight:700;line-height:1.65;color:#775466}
+.app[data-scene="0"] .story-card .eyebrow,.app[data-scene="0"] .story-card .message,.app[data-scene="0"] .story-card .subtext{display:none}
+.app[data-scene="1"] .story-card .eyebrow,.app[data-scene="1"] .story-card .message,.app[data-scene="1"] .story-card .subtext{display:none}
+.app[data-scene="3"] .story-card{display:none}
+.app[data-scene="0"] .story-card,.app[data-scene="1"] .story-card{width:auto;min-width:min(360px,86vw);max-height:none;padding:15px 20px 18px}
+.app[data-scene="0"] .scene-title,.app[data-scene="1"] .scene-title,.app[data-scene="3"] .scene-title{font-family:'Tajawal',sans-serif;letter-spacing:0}
+.app[data-scene="1"] .scene-title,.app[data-scene="3"] .scene-title{visibility:hidden}
+.app[data-scene="0"] .stage{margin-top:14px}
+.app[data-scene="1"] .stage{margin-top:9px}
+.app[data-scene="3"] .stage{margin-bottom:18vh}
+.app[data-scene="3"] .glow-heart{top:13%}
+.final-couple{height:84%}
+@media(max-width:650px){
+ .final-couple{height:78%}
+ .app[data-scene="0"] .girl{left:3%;height:83%}.app[data-scene="0"] .boy{right:3%;height:83%}
+ .app[data-scene="1"] .girl{left:3%;height:75%}.app[data-scene="1"] .boy{right:3%;height:75%}
+ .app[data-scene="3"] .girl{left:23%;height:85%}.app[data-scene="3"] .boy{right:23%;height:85%}
+ .thought-cloud{top:-7%;min-height:160px;width:92vw;padding:22px 26px;border-radius:43% 45% 39% 46% / 34% 37% 41% 42%}
+ .thought-text{font-size:clamp(17px,4.1vw,21px);line-height:1.55}
+ .app[data-scene="3"] .stage{margin-bottom:12vh}
+}
+@media(max-height:700px){.thought-cloud{top:-10%;padding-top:16px;padding-bottom:16px;min-height:135px}.thought-text{font-size:clamp(16px,2.5vw,21px)}.app[data-scene="3"] .stage{margin-bottom:8vh}}
+
+/* Final requested adjustments: closer characters, smaller lifted thought cloud, final greeting. */
+.app[data-scene="0"] .girl{left:29%}
+.app[data-scene="0"] .boy{right:29%}
+.app[data-scene="1"] .girl{left:29%;height:75%}
+.app[data-scene="1"] .boy{right:29%;height:75%}
+.app[data-scene="1"] .thought-cloud{top:-22%;width:min(475px,78vw);min-height:145px;padding:20px 27px;border-radius:42% 45% 43% 46% / 45% 40% 49% 44%}
+.app[data-scene="1"] .thought-text{font-size:clamp(17px,2vw,21px);line-height:1.55}
+.app[data-scene="3"] .scene-title{visibility:visible;font-family:'DM Sans','Tajawal',sans-serif;direction:ltr;letter-spacing:0;font-size:clamp(22px,3.3vw,39px);font-weight:700;color:#a76283;text-align:center;padding:0 10px;text-wrap:balance}
+@media(max-width:650px){
+ .app[data-scene="0"] .girl{left:18%;height:78%}
+ .app[data-scene="0"] .boy{right:18%;height:78%}
+ .app[data-scene="1"] .girl{left:20%;height:68%}
+ .app[data-scene="1"] .boy{right:20%;height:68%}
+ .app[data-scene="1"] .thought-cloud{top:-26%;width:min(370px,83vw);min-height:135px;padding:17px 21px}
+ .app[data-scene="1"] .thought-text{font-size:clamp(15px,3.8vw,18px);line-height:1.45}
+ .app[data-scene="3"] .scene-title{font-size:clamp(19px,5vw,27px)}
+}
+@media(max-height:700px){.app[data-scene="1"] .thought-cloud{top:-22%;min-height:120px;padding:12px 21px}}
+
+/* Scene 2: face-to-face conversation; the drawn expressions belong to the characters. */
+.talking-couple{position:absolute;z-index:4;left:50%;bottom:0;height:76%;max-width:94%;opacity:0;transform:translateX(-50%) translateY(14px) scale(.97);pointer-events:none;transition:opacity .7s ease,transform .9s cubic-bezier(.2,.8,.2,1);filter:drop-shadow(0 14px 17px #8b63743a)}
+.talking-couple img{display:block;height:100%;max-width:100%;width:auto;object-fit:contain}
+.app[data-scene="1"] .talking-couple{opacity:1;transform:translateX(-50%) translateY(0) scale(1);animation:talkingSway 4.3s ease-in-out 1s infinite}
+.app[data-scene="1"] #girl,.app[data-scene="1"] #boy{opacity:0;pointer-events:none}
+.app[data-scene="1"] .thought-cloud{top:-26%;z-index:9}
+@keyframes talkingSway{0%,100%{transform:translateX(-50%) translateY(0) rotate(0deg)}50%{transform:translateX(-50%) translateY(-4px) rotate(.4deg)}}
+@media(max-width:650px){
+ .app[data-scene="1"] .talking-couple{height:71%;max-width:96%}
+ .app[data-scene="1"] .thought-cloud{top:-27%}
+}
+@media(max-height:700px){.app[data-scene="1"] .talking-couple{height:68%}}
+
+/* New pomegranate scene: same romantic backdrop and a compact speech cloud. */
+.pomegranate-couple{position:absolute;z-index:4;left:50%;bottom:0;height:77%;max-width:94%;opacity:0;transform:translateX(-50%) translateY(18px) scale(.95);pointer-events:none;transition:opacity .75s ease,transform .9s cubic-bezier(.2,.8,.2,1);filter:drop-shadow(0 18px 20px #8b63743b)}
+.pomegranate-couple img{display:block;height:100%;max-width:100%;width:auto;object-fit:contain}
+.app[data-scene="2"] .pomegranate-couple{opacity:1;transform:translateX(-50%) translateY(0) scale(1);animation:pomegranateFloat 4.4s ease-in-out 1s infinite}
+.app[data-scene="2"] #girl,.app[data-scene="2"] #boy{opacity:0;pointer-events:none}
+.app[data-scene="2"] .thought-cloud{opacity:1;transform:translate(-50%,0) scale(1);top:-9%;width:min(520px,86vw);min-height:105px;padding:13px 23px;border-radius:48% 45% 43% 47% / 43% 45% 48% 46%}
+.app[data-scene="2"] .thought-text{font-size:clamp(16px,2.15vw,23px);line-height:1.5}
+.app[data-scene="2"] .story-card .eyebrow,.app[data-scene="2"] .story-card .message,.app[data-scene="2"] .story-card .subtext{display:none}
+.app[data-scene="2"] .story-card{display:block;width:auto;min-width:min(360px,86vw);max-height:none;padding:15px 20px 18px}
+.app[data-scene="2"] .scene-title{visibility:hidden}
+.app[data-scene="2"] .stage{margin-top:9px;margin-bottom:0}
+.app[data-scene="3"] .pomegranate-couple{opacity:0}
+@keyframes pomegranateFloat{0%,100%{transform:translateX(-50%) translateY(0) rotate(0)}50%{transform:translateX(-50%) translateY(-5px) rotate(-.35deg)}}
+@media(max-width:650px){
+ .app[data-scene="2"] .pomegranate-couple{height:72%;max-width:98%}
+ .app[data-scene="2"] .thought-cloud{top:-8%;width:88vw;min-height:108px;padding:14px 17px}
+ .app[data-scene="2"] .thought-text{font-size:clamp(16px,4vw,19px);line-height:1.45}
+}
+@media(max-height:700px){.app[data-scene="2"] .pomegranate-couple{height:69%}.app[data-scene="2"] .thought-cloud{top:-13%;padding:10px 16px}}
+</style>
+</head>
+<body>
+<main class="app" id="app" data-scene="0" aria-live="off">
+  <div class="ambient"><div class="orb one"></div><div class="orb two"></div><div class="orb three"></div></div>
+  <div class="specks" id="specks" aria-hidden="true"></div>
+  <header class="topbar"><div class="brand"><span class="heart">♡</span> just us, always.</div><div class="utility"><button class="circle-btn" id="audioBtn" title="تشغيل الموسيقى" aria-label="تشغيل الموسيقى">♫</button><button class="circle-btn" id="restartBtn" title="ابدأ من الأول" aria-label="ابدأ من الأول">↻</button></div></header>
+  <div class="scene-number"><span id="sceneLabel">01 / 04</span><div class="progress" id="progress" aria-label="تقدم الحكاية"></div></div>
+  <button class="back" id="backBtn" aria-label="المشهد السابق" title="السابق">‹</button>
+  <div class="scene-container scene-enter" id="content">
+    <h1 class="scene-title" id="sceneTitle"></h1>
+    <div class="stage" id="stage" aria-label="رسوم متحركة لشخصيتين مستوحاتين من الصور">
+      <div class="halo"></div><div class="window"></div><div class="couch"></div><span class="plant">🌿</span>
+      <span class="tiny-star a">✧</span><span class="tiny-star b">✦</span><span class="tiny-star c">✧</span>
+      <div class="character girl" id="girl"><img class="happy" src="assets/character_1.webp" alt="شخصية كرتونية لطيفة للبنت بحجاب فاتح وبلوزة بنية" draggable="false" /><img class="upset" src="assets/character_2.webp" alt="" aria-hidden="true" draggable="false" /></div>
+      <div class="character boy" id="boy"><img class="happy" src="assets/character_3.webp" alt="شخصية كرتونية لطيفة للولد بنظارة ولحية وتيشيرت أبيض" draggable="false" /><img class="upset" src="assets/character_4.webp" alt="" aria-hidden="true" draggable="false" /></div>
+
+      <div class="final-couple" id="finalCouple"><img src="assets/character_5.webp" alt="إنتوا ماسكين إيد بعض وبتبصوا لبعض بحب" draggable="false" /></div>
+      <div class="talking-couple" aria-hidden="true"><img src="assets/character_6.webp" alt="" draggable="false"></div>
+      <div class="pomegranate-couple" aria-label="إنتِ بتقدمي طبق رمان وهو بيضحك ومنبهر"><img src="assets/character_7.webp" alt="البنت بتقدم طبق مليان حبوب رمان حمراء والولد بيضحك وإيده على وشه" draggable="false"></div>
+      <div class="thought-cloud" id="thoughtCloud"><span class="thought-text" id="thoughtText"></span></div><span class="glow-heart">💗</span><div id="bursts" aria-hidden="true"></div>
+    </div>
+    <section class="story-card" id="card" aria-live="polite"><p class="eyebrow" id="eyebrow"></p><div class="message" id="message"></div><div class="subtext" id="subtext"></div><div class="actions" id="actions"></div></section>
+  </div>
+  <div id="reaction" aria-live="polite"></div>
+  <div class="footer-note">made with all my love ♡</div>
+</main>
+<script>
+(()=>{
+'use strict';
+const scenes=[
+ {title:'',message:'',button:'عايزة اقول حاجه'},
+ {title:'',message:'حاسه ان الدنيا بينا متنشنه الفتره دي و كنت عايزه افكرك اني بحبك يا لولو و مهما اتخانقنا هفضل علي قلبك',button:'المهم'},
+ {title:'',message:'اني مستنيه اليوم الي هفرط في الرمان في شقتي الي هاخده ب التمكين 😈🤍',button:'نعتبر اننا اتصالحنا'},
+ {title:'',message:'',final:true}
+];
+const $=id=>document.getElementById(id),app=$('app'),content=$('content'),actions=$('actions'),burstLayer=$('bursts');
+let current=0,transitioning=false,typeTimer=null,burstTimer=null,typingId=0;
+const particles=['♡','✦','·','♡','✧','·','♡','✦','·','♡','✧','♡','·','✦'];
+$('specks').innerHTML=particles.map((p,i)=>`<span class="speck" style="--x:${(i*43+13)%97}%;--y:${(i*37+8)%89}%;--duration:${7+i%6}s;--delay:${-i*.81}s;--size:${10+i%4*5}px">${p}</span>`).join('');
+function typeThought(text){clearInterval(typeTimer);let n=0;const id=++typingId;const chars=Array.from(text);const el=$('thoughtText');el.textContent='';const tick=()=>{if(id!==typingId)return;n=Math.min(n+1,chars.length);el.textContent=chars.slice(0,n).join('');if(n===chars.length)clearInterval(typeTimer)};tick();typeTimer=setInterval(tick,45)}
+function draw(){
+ const s=scenes[current];app.dataset.scene=String(current);
+ content.className='scene-container scene-enter';
+ $('sceneLabel').textContent=String(current+1).padStart(2,'0')+' / 04';
+ $('progress').innerHTML=scenes.map((_,i)=>`<span class="${i<=current?'active':''}"></span>`).join('');
+ $('backBtn').disabled=current===0;
+ $('sceneTitle').textContent=current===3?'good morning ashroofyy i love u baby':'';
+ $('eyebrow').textContent='';$('message').textContent='';$('subtext').textContent='';
+ if(current===1||current===2)typeThought(s.message);else{clearInterval(typeTimer);$('thoughtText').textContent=''}
+ actions.replaceChildren();
+ if(!s.final){const btn=document.createElement('button');btn.className='primary';btn.textContent=s.button;btn.onclick=()=>go(current+1);actions.append(btn)}
+ if(current===3){setTimeout(()=>heartStorm(26),540);burstTimer=setInterval(()=>heartStorm(22),3100)}
+}
+function clearReaction(){clearInterval(burstTimer);burstLayer.replaceChildren()}
+function go(next){if(transitioning||next<0||next>=scenes.length)return;transitioning=true;clearReaction();content.classList.remove('scene-enter');content.classList.add('scene-exit');setTimeout(()=>{current=next;draw();transitioning=false},400)}
+$('backBtn').onclick=()=>go(current-1);
+$('restartBtn').onclick=()=>{if(current!==0)go(0);else{clearReaction();draw()}};
+function heartStorm(count=19){burstLayer.replaceChildren();for(let i=0;i<count;i++){const heart=document.createElement('span');heart.className='heart-burst';heart.textContent=['♡','♥','♡','♥'][i%4];heart.style.color=['#ef8daa','#d880a4','#f4b0be'][i%3];heart.style.setProperty('--dx',`${(Math.random()-.5)*450}px`);heart.style.setProperty('--dy',`${-60-Math.random()*235}px`);heart.style.left=`${35+Math.random()*30}%`;heart.style.bottom=`${15+Math.random()*35}%`;heart.style.animationDelay=`${Math.random()*.7}s`;heart.style.fontSize=`${17+Math.random()*25}px`;burstLayer.appendChild(heart)}}
+document.addEventListener('keydown',e=>{if(e.target.closest('button'))return;if(e.key==='ArrowLeft'&&current<3)go(current+1);if(e.key==='ArrowRight'&&current>0)go(current-1)});
+// An ORIGINAL, gently synthesized music-box melody. No audio file or third-party music required.
+let ctx=null,musicOn=false,musicTimer=null,noteIndex=0;const melody=[0,4,7,12,7,4,2,5,9,12,9,5,0,4,7,11,7,4,-2,2,5,9,5,2];const base=261.63;
+function playNote(){if(!musicOn||!ctx)return;const n=melody[noteIndex++%melody.length];const freq=base*Math.pow(2,n/12);const osc=ctx.createOscillator(),gain=ctx.createGain(),filter=ctx.createBiquadFilter();osc.type='sine';osc.frequency.value=freq;filter.type='lowpass';filter.frequency.value=1500;const now=ctx.currentTime;gain.gain.setValueAtTime(.0001,now);gain.gain.exponentialRampToValueAtTime(.065,now+.022);gain.gain.exponentialRampToValueAtTime(.0001,now+.73);osc.connect(filter);filter.connect(gain);gain.connect(ctx.destination);osc.start(now);osc.stop(now+.76)}
+$('audioBtn').onclick=async()=>{try{if(!ctx)ctx=new(window.AudioContext||window.webkitAudioContext)();await ctx.resume();musicOn=!musicOn;if(musicOn){noteIndex=0;playNote();musicTimer=setInterval(playNote,430);$('audioBtn').textContent='♫';$('audioBtn').style.background='#f6d6e4';$('audioBtn').title='إيقاف الموسيقى';$('audioBtn').setAttribute('aria-label','إيقاف الموسيقى')}else{clearInterval(musicTimer);$('audioBtn').textContent='♪̸';$('audioBtn').style.background='';$('audioBtn').title='تشغيل الموسيقى';$('audioBtn').setAttribute('aria-label','تشغيل الموسيقى')}}catch(e){alert('المتصفح مش بيسمح بتشغيل الصوت على الجهاز ده.')}};
+window.addEventListener('pagehide',()=>{clearInterval(musicTimer);clearInterval(burstTimer);clearInterval(typeTimer);ctx?.close()});draw();
+})();
+</script>
+</body>
+</html>
